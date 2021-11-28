@@ -42,6 +42,7 @@ python main.py --pretrainedmodel_pth 'PATH/TO/MODEL' --dataset_pth 'PATH/TO/DATA
 
 *  Heatmaps (across timesteps) are visualized in folder ```figuresave```
 *  In order to change the target images, please change the list in line 32. 
+
    Example) visualize 10th and 52th images in TinyImageNet validation dataset.  
 
 ```
