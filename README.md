@@ -19,30 +19,28 @@ conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 
 ## Training and testing
 
-* Arguments required for training and testing are contained in ``config.py``` 
-* Here is an example of running an experiment on CIFAR100
-* (if a user want to skip search process and use predefined architecgtur) A architecture can be parsed by ``--cnt_mat 0302 0030 3003 0000`` format
-
 
 ### Training
 
+*  Download tinyimagenet dataset to ```PATH/TO/DATASET```  
 *  Train a model using BNTT (https://github.com/Intelligent-Computing-Lab-Yale/BNTT-Batch-Normalization-Through-Time).
 
 
 ### Testing (on pretrained model)
 
-* As a first step, download pretrained parameters ([link][e]) to ```./savemodel/save_cifar100_bw.pth.tar```   
+* As a first step, download pretrained parameters ([link][e]) to ```PATH/TO/MODEL.pth.tar```   
 
-[e]: https://drive.google.com/file/d/1pnS0nFMk2KlxTFeeVT5fYMdTPh_8qn84/view?usp=sharing
+[e]: https://drive.google.com/file/d/11ybFXqRB3edxsFMUrPrwwH5_HlAAHNUp/view?usp=sharing
 
-* The above pretrained model is for CIFAR100 / architecture ``--cnt_mat 0302 0030 3003 0000``
+* The above pretrained model is for TinyImageNet / VGG11 architecture
 
 *  Run the following command
 
 ```
-python search_snn.py  --dataset 'cifar100' --cnt_mat 0302 0030 3003 0000 --savemodel_pth './savemodel/save_cifar100_bw.pth.tar'  --celltype 'backward'
+python main.py --pretrainedmodel_pth 'PATH/TO/MODEL' --dataset_pth 'PATH/TO/DATASET' --target_layer 6
 ```
 
+*  Heatmaps (across timesteps) are visualized in folder ```figuresave```
 
  
 
