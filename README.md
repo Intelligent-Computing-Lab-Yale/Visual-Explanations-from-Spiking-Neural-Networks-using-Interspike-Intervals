@@ -34,13 +34,31 @@ conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 
 * The above pretrained model is for TinyImageNet / VGG11 architecture
 
-*  Run the following command
+* Run the following command
 
 ```
 python main.py --pretrainedmodel_pth 'PATH/TO/MODEL' --dataset_pth 'PATH/TO/DATASET' --target_layer 6
 ```
 
 *  Heatmaps (across timesteps) are visualized in folder ```figuresave```
+*  In order to change the target images, please change the list in line 32. 
+   Example) visualize 10th and 52th images in TinyImageNet validation dataset.  
 
+```
+img_nums = [10, 52]
+```
+
+
+## Citation
+ 
+Please consider citing our paper:
+ ```
+@article{kim2021visual,
+  title={Visual explanations from spiking neural networks using interspike intervals},
+  author={Kim, Youngeun and Panda, Priyadarshini},
+  journal={arXiv preprint arXiv:2103.14441},
+  year={2021}
+ ```
+ 
  
 
