@@ -1,5 +1,5 @@
 # Visual-Explanations-from-Spiking-Neural-Networks-using-Interspike-Intervals
-Kim, Y., Panda, P. Visual explanations from spiking neural networks using inter-spike intervals. Sci Rep 11, 19037 (2021). https://doi.org/10.1038/s41598-021-98448-0
+Kim, Y. & Panda, P., Visual explanations from spiking neural networks using inter-spike intervals. Sci Rep 11, 19037 (2021). https://doi.org/10.1038/s41598-021-98448-0
 
 
 ## Prerequisites
@@ -12,16 +12,9 @@ Kim, Y., Panda, P. Visual explanations from spiking neural networks using inter-
 
 ### Conda Environment Setting
 ```
-conda create -n SNASNet 
-conda activate SNASNet
+conda create -n VisualExp 
+conda activate VisualExp
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
-pip install scipy
-```
-### Spikingjelly Installation (ref: https://github.com/fangwei123456/spikingjelly)
-```
-git clone https://github.com/fangwei123456/spikingjelly.git
-cd spikingjelly
-python setup.py install
 ```
 
 ## Training and testing
@@ -30,27 +23,11 @@ python setup.py install
 * Here is an example of running an experiment on CIFAR100
 * (if a user want to skip search process and use predefined architecgtur) A architecture can be parsed by ``--cnt_mat 0302 0030 3003 0000`` format
 
-Example) Architecture and the corresponding connection matrix
-
-<img src="https://user-images.githubusercontent.com/41351363/142759748-50d0e9bf-4654-4831-97eb-5bfb4d30c21e.png"  width="630" height="400"/>
-
 
 ### Training
 
-*  Run the following command
+*  Train a model using BNTT (https://github.com/Intelligent-Computing-Lab-Yale/BNTT-Batch-Normalization-Through-Time).
 
-```
-python search_snn.py  --exp_name 'cifar100_backward' --dataset 'cifar100'  --celltype 'backward' --batch_size 32 --num_search 5000 
-```
-simple argument instruction
-
---exp_name: savefile name
-
---dataset: dataset for experiment
-
---celltype: find backward connections or forward connections
-
---num_search: number of architecture candidates for searching
 
 ### Testing (on pretrained model)
 
